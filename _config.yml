@@ -13,7 +13,7 @@ title_separator          : "-"
 name                     : &name "Basant Awasthi"
 description              : &description "PhD student at LSU"
 url                      : https://BAwasthi.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/blog" # the subpath of your site, e.g. "/blog"
+baseurl                  : "" #"/blog" # the subpath of your site, e.g. "/blog"
 repository               : "BAwasthi/BAwasthi.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
@@ -21,7 +21,7 @@ repository               : "BAwasthi/BAwasthi.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "Basant.png"
   name             : "Basant Awasthi"
   pronouns         : # example: "she/her"  
   bio              : "Engineer | Geographer"
