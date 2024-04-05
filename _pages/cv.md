@@ -9,8 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-Link to google drive: https://drive.google.com/file/d/1RGEbItrYRzEwz3QbP1_FZwm6UcGaGg64/view?usp=drive_link
-
 
 Education
 ======
