@@ -11,16 +11,16 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Geography, Louisiana State University, 2026 (expected)
+* M.S. in Geography, Louisiana State University, 2023
+* B.E. in Geomatics Engineering, Kathmandu University, 2018
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Aug 2021 - Present: Graduate Research Assistant
+  * Louisiana State University
+  * Duties includes: Utilized geospatial tools for Wetland Monitoring
+  * Supervisor: Dr. Xuelian Meng
 
 * Fall 2015: Research Assistant
   * Github University
