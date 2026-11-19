@@ -3,208 +3,438 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Basant Awasthi | Remote Sensing & GeoAI</title>
-  <meta name="description" content="Basant Awasthi, Ph.D. student in Geography at Louisiana State University. Remote sensing, UAV mapping, and explainable AI for coastal wetlands.">
+  <title>Basant Awasthi | Coastal Remote Sensing & GeoAI</title>
+  <meta name="description" content="Basant Awasthi, Ph.D. student in Geography at Louisiana State University. Remote sensing, UAV mapping, and explainable AI for coastal land loss and wetland resilience in Louisiana.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top">Basant Awasthi</a>
-      <nav>
+  <header class="topbar" id="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#home" aria-label="Basant Awasthi home">
+        <span class="brand-mark" aria-hidden="true">BA</span>
+        <span class="brand-text"><b>Basant Awasthi</b><small>Coastal Remote Sensing · GeoAI</small></span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="site-nav" id="siteNav">
         <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#sites">Study Sites</a>
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
+        <a class="nav-cv" href="assets/Basant_Awasthi_CV.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero wrap">
-      <div class="hero-grid">
-      <div>
-      <p class="eyebrow">Ph.D. Student · Geography · Louisiana State University</p>
-      <h1>Remote sensing, UAV mapping, and explainable AI for coastal wetlands.</h1>
-      <p class="lede">
-        I study how Louisiana's coast is changing. My work combines satellite time series, drone imagery,
-        field data, and machine learning to map wetland vegetation, measure land loss, and forecast what comes next.
-      </p>
-      <div class="cta">
-        <a class="btn primary" href="assets/Basant_Awasthi_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-        <a class="btn" href="#contact">Get in touch</a>
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero">
+      <svg class="contours" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke-width="1.2">
+          <path class="c c1" d="M-20 520 C 200 470, 360 590, 560 540 S 900 430, 1100 500 S 1360 600, 1460 540"/>
+          <path class="c c2" d="M-20 570 C 220 520, 380 640, 580 590 S 920 480, 1120 550 S 1370 650, 1460 590"/>
+          <path class="c c3" d="M-20 620 C 240 570, 400 690, 600 640 S 940 530, 1140 600 S 1380 700, 1460 640"/>
+          <path class="c c4" d="M-20 670 C 260 620, 420 740, 620 690 S 960 580, 1160 650 S 1390 750, 1460 690"/>
+          <path class="c c5" d="M-20 420 C 180 380, 340 470, 540 440 S 880 340, 1080 400 S 1350 480, 1460 430"/>
+          <path class="c c6" d="M-20 320 C 160 290, 320 360, 520 340 S 860 260, 1060 300 S 1340 370, 1460 330"/>
+        </g>
+      </svg>
+      <div class="scanline" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow light">Ph.D. Student · Geography · Louisiana State University</p>
+          <h1>Watching the <em>coast</em> change, one pixel at a time.</h1>
+          <p class="lede">
+            I use satellite time series, multispectral and LiDAR drones, field surveys, and explainable AI
+            to map coastal wetlands, measure land loss, and forecast how Louisiana's coast will change.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore projects</a>
+            <a class="btn btn-ghost" href="#sites">View study sites</a>
+            <a class="btn btn-ghost" href="assets/Basant_Awasthi_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          </div>
+          <div class="quick-links">
+            <a href="mailto:bawast2@lsu.edu">Email</a>
+            <a href="https://scholar.google.com/citations?user=yn0OhgIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+            <a href="https://github.com/BAwasthi" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="sensor-card">
+            <div class="sensor-head">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="mono">LANDSAT · 1984 → 2024</span>
+            </div>
+            <div class="sensor-body">
+              <svg viewBox="0 0 320 200" class="delta" aria-label="Stylized illustration of a river delta losing land over time">
+                <defs>
+                  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#1b5f74"/><stop offset="1" stop-color="#0d3a4c"/>
+                  </linearGradient>
+                </defs>
+                <rect width="320" height="200" fill="url(#water)"/>
+                <path class="land land-a" d="M0 0 H320 V60 C 280 70, 260 95, 230 92 C 205 90, 200 120, 175 130 C 160 160, 150 185, 140 200 C 130 175, 120 150, 100 140 C 75 128, 60 100, 30 95 C 15 92, 5 80, 0 78 Z"/>
+                <path class="land land-b" d="M0 0 H320 V55 C 285 62, 262 82, 236 82 C 212 82, 205 105, 182 116 C 165 140, 155 165, 146 190 C 134 165, 124 140, 106 130 C 82 120, 64 92, 34 86 C 18 83, 6 72, 0 70 Z"/>
+                <path class="river" d="M150 0 C 152 40, 145 80, 150 110 S 142 170, 142 200" />
+                <g class="pins">
+                  <circle cx="232" cy="86" r="4"/><circle cx="104" cy="134" r="4"/><circle cx="176" cy="124" r="4"/>
+                </g>
+              </svg>
+              <div class="legend mono">
+                <span><i class="sw sw-a"></i>land, 1984</span>
+                <span><i class="sw sw-b"></i>land, 2024</span>
+              </div>
+            </div>
+            <p class="sensor-caption">Illustration only, not real data.</p>
+          </div>
+          <img class="hero-portrait" src="assets/basant.jpg" alt="Portrait of Basant Awasthi" width="400" height="400">
+        </div>
       </div>
+
+      <div class="container">
+        <ul class="stats reveal">
+          <li><b data-count="40">0</b><span>years of Landsat land-area change (1984–2024)</span></li>
+          <li><b data-count="95" data-suffix="%">0</b><span>top habitat classification accuracy</span></li>
+          <li><b data-count="16">0</b><span>publications & manuscripts</span></li>
+          <li><b data-count="6">0</b><span>coastal & UAV research projects</span></li>
+        </ul>
       </div>
-      <img class="portrait" src="assets/basant.jpg" alt="Portrait of Basant Awasthi" width="400" height="400">
-      </div>
-      <ul class="stats">
-        <li><strong>40 yrs</strong><span>of Landsat land-area change analyzed (1984–2024)</span></li>
-        <li><strong>95%</strong><span>classification accuracy on habitat maps</span></li>
-        <li><strong>16</strong><span>publications and manuscripts</span></li>
-        <li><strong>3</strong><span>conference awards</span></li>
-      </ul>
+      <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 80, 480 0, 720 30 S 1200 80, 1440 30 V80 H0 Z"/></svg>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section wrap">
-      <h2>About</h2>
-      <div class="two-col">
-        <div>
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div class="section-heading reveal">
+          <p class="eyebrow">About</p>
+          <h2>Where remote sensing, statistics, and coastal science meet.</h2>
+        </div>
+        <div class="about-copy reveal">
           <p>
-            I'm a Ph.D. student in Geography (minor in Applied Statistics) at Louisiana State University.
-            My dissertation uses <b>remote sensing and explainable AI</b> to monitor coastal land loss and the
-            resilience of <i>Phragmites australis</i> (Roseau cane) in Louisiana.
+            I'm a Ph.D. student in Geography, minoring in Applied Statistics, at Louisiana State University. I work in the
+            TiGERS Lab with Dr. Xuelian Meng. My dissertation uses <b>remote sensing and explainable AI</b> to monitor coastal
+            land loss and the resilience of <i>Phragmites australis</i> (Roseau cane) in Louisiana.
           </p>
           <p>
-            I trained as a Geomatics Engineer at Kathmandu University, where I later taught surveying and geodesy.
-            Today I work on federally funded USDA/APHIS research, fly multispectral and LiDAR drones in coastal marshes,
-            and build forecasting models for land-area change.
+            I trained as a Geomatics Engineer at Kathmandu University and taught surveying and geodesy there.
+            Now I work on federally funded USDA/APHIS research, fly multispectral and LiDAR drones over coastal marshes,
+            and build models that fill gaps in, and forecast, decades of satellite records.
           </p>
-        </div>
-        <div class="edu">
-          <h3>Education</h3>
-          <dl>
-            <dt>Ph.D. Geography, minor Applied Statistics</dt><dd>Louisiana State University · 2023–present</dd>
-            <dt>M.S. Geography</dt><dd>Louisiana State University · 2021–2026</dd>
-            <dt>B.E. Geomatics Engineering</dt><dd>Kathmandu University · 2014–2018</dd>
-          </dl>
+          <div class="edu-cards">
+            <article class="edu-card"><span class="when">2023 – Present</span><h3>Ph.D. Geography</h3><p>Minor in Applied Statistics · Louisiana State University</p></article>
+            <article class="edu-card"><span class="when">2021 – 2026</span><h3>M.S. Geography</h3><p>Thesis: Four decades of land-area change & forecasting in coastal Louisiana</p></article>
+            <article class="edu-card"><span class="when">2014 – 2018</span><h3>B.E. Geomatics Engineering</h3><p>Kathmandu University · Government of Nepal Fellowship</p></article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section wrap">
-      <h2>Research Projects</h2>
-      <div class="cards">
-        <article class="card">
-          <span class="tag">Satellite · Deep Learning</span>
-          <h3>Roseau Cane Habitat Mapping</h3>
-          <p>Automated Landsat and Sentinel-2 workflows in Google Earth Engine and Python, using Random Forest, SVM and U-Net (up to 95% accuracy). Used CCDC to track dieback, persistence, and change over many years.</p>
-          <p class="meta">USDA / APHIS funded</p>
-        </article>
-        <article class="card">
-          <span class="tag">Time Series · Forecasting</span>
-          <h3>Four Decades of Coastal Land Change</h3>
-          <p>A semi-automated Landsat framework for annual and monthly land area across four coastal systems (1984–2024). GAMs for drivers and lagged storm effects, Kalman vs. Gaussian Process gap filling, and SARIMA / Prophet / XGBoost / neural-net forecasts.</p>
-          <p class="meta">M.S. thesis · ASPRS Gulf South 3rd Place</p>
-        </article>
-        <article class="card">
-          <span class="tag">UAV · Multispectral</span>
-          <h3>Multi-Temporal UAV Wetland Mapping</h3>
-          <p>RGB and 10-band multispectral drone surveys at Rockefeller, the Mississippi River Delta, Atchafalaya and Vermilion. Fine-scale classification, fragmentation and land–water change, validated with RTK GPS and field plots.</p>
-        </article>
-        <article class="card">
-          <span class="tag">UAV · Machine Learning</span>
-          <h3>Pasture Yield & Quality</h3>
-          <p>Led drone data collection across six farms. Combined multispectral imagery and field samples to model biomass, forage condition, species composition and protein content.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Photogrammetry · 3D</span>
-          <h3>Engineering Building Digital Twin</h3>
-          <p>Nadir and oblique UAV imagery processed in Agisoft Metashape into georeferenced dense point clouds for an LSU Civil Engineering digital twin.</p>
-        </article>
-        <article class="card">
-          <span class="tag">GIS · Coastal Resilience</span>
-          <h3>Slidell Compound Flooding</h3>
-          <p>Hydrologic, terrain and site-selection analysis to evaluate nature-based solutions such as detention ponds, marsh terraces and breakwaters, shared through StoryMaps with the community.</p>
-          <p class="meta">LSU Coastal Ecosystem Design Studio</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section wrap">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div><h3>GIS & Remote Sensing</h3><p>ArcGIS Pro, ArcGIS Online & StoryMaps, Google Earth Engine, QGIS, ENVI, eCognition, ERDAS IMAGINE</p></div>
-        <div><h3>Programming</h3><p>Python (ArcPy, NumPy, Pandas, GeoPandas, scikit-learn), R, SQL, JavaScript, Jupyter</p></div>
-        <div><h3>ML & Statistics</h3><p>Random Forest, SVM, XGBoost, U-Net, TensorFlow/Keras, GAMs, time-series forecasting</p></div>
-        <div><h3>UAV & 3D</h3><p>Multispectral & LiDAR UAV, Agisoft Metashape, Pix4D, CloudCompare, point clouds</p></div>
-        <div><h3>Hydrology & Coastal</h3><p>Arc Hydro, watershed & flow analysis, ADCIRC, SMS</p></div>
-        <div><h3>Field & Survey</h3><p>RTK GNSS, Trimble Business Center, total station, ground-truth collection</p></div>
-      </div>
-    </section>
-
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section wrap">
-      <h2>Selected Publications</h2>
-      <ol class="pubs">
-        <li><span class="status">Accepted</span> Sresto, M. A., Meng, X., <b>Awasthi, B.</b>, et al. (2026). Integrating machine learning and remote sensing for comprehensive drought modeling in Louisiana, USA. <i>Science of the Total Environment</i>.</li>
-        <li><span class="status">Under review</span> KC, M., <b>Awasthi, B.</b>, Sahoo, B., Sresto, M. A., Roy, S., & Meng, X. (2026). Temporal transferability of deep learning for <i>Phragmites australis</i> mapping through Sentinel-2 time series in the Lower Mississippi River Delta. <i>ISPRS Journal of Photogrammetry and Remote Sensing</i>.</li>
-        <li>KC, M., Bhatta, G., <b>Awasthi, B.</b>, Anderson, T., & Lohani, S. P. (2026). Solar energy landscapes in Nepal: site suitability analysis of solar PV using a geospatial multi-criteria decision analysis. <i>Royal Society Open Science</i>, 13(9).</li>
-        <li>Kuikel, S., Upadhyay, B., Aryal, D., Bista, S., <b>Awasthi, B.</b>, & Shrestha, S. (2021). Individual banana tree crown delineation using UAV images. <i>ISPRS Archives</i>, XLIII-B3-2021, 581–585.</li>
-        <li>Shrestha, A., Ghimire, S., Pokharel, S., Dhami, S., Karki, S., <b>Awasthi, B.</b>, & Acharya, T. D. (2021). Landslide susceptibility mapping in Budhi Gandaki River Sub-Basin. <i>Bulletin of Nepal Hydrogeological Association</i>, 6.</li>
-        <li><b>Awasthi, B.</b>, Karki, S., Regmi, P., Dhami, D. S., Thapa, S., & Panday, U. S. (2020). Analyzing the effect of distribution pattern and number of GCPs on overall accuracy of UAV photogrammetric results. <i>Proceedings of UASG 2019</i>, Lecture Notes in Civil Engineering, vol 51. Springer. <a href="https://doi.org/10.1007/978-3-030-37393-1_29" target="_blank" rel="noopener">DOI</a> · <span class="award">Best Paper Award</span></li>
-        <li>Shrestha, R., Zevenbergen, J., Panday, U. S., <b>Awasthi, B.</b>, & Karki, S. (2019). Revisiting the current UAV regulations in Nepal. <i>ISPRS Archives</i>, XLII-5/W3, 107–114.</li>
-        <li><b>Awasthi, B.</b>, Karki, S., Regmi, P., Dhami, D. S., Thapa, S., & Panday, U. S. (2019). Assessing the overall accuracy of UAV photogrammetry. <i>Journal of Land Management and Geomatics Education</i>, 1(1), 22–32.</li>
-      </ol>
-      <p class="note">Plus 7 manuscripts in preparation on land-area forecasting, <i>Phragmites</i> dynamics, Hurricane Francine, and sea-level change in Bangladesh. Full list in the <a href="assets/Basant_Awasthi_CV.pdf" target="_blank" rel="noopener">CV</a>.</p>
-
-      <h3 class="sub">Talks & Presentations</h3>
-      <ul class="talks">
-        <li><b>USGS Wetland and Aquatic Research Center</b> (invited, 2026): Four decades of historical land-loss change and forecasting in coastal Louisiana</li>
-        <li><b>Ocean Sciences Meeting</b>, Glasgow (2026): Forecasting land area dynamics across Louisiana</li>
-        <li><b>ASPRS Gulf South Geospatial Conference</b> (2026): Forecasting land area dynamics in the Mississippi River Delta · <span class="award">3rd Place</span></li>
-        <li><b>Louisiana ASA Chapter Meeting</b> (invited, 2026): A unified framework for imputing and forecasting coastal land-area time series</li>
-        <li><b>AAG Annual Meeting</b>, Detroit (2025): Long-term trends in wetland dynamics across coastal Louisiana</li>
-        <li><b>AGU Annual Meeting</b>, Washington D.C. (2024, poster): Ecological vulnerability in the Mississippi River Delta</li>
-      </ul>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section wrap">
-      <h2>Experience</h2>
-      <ul class="timeline">
-        <li><div class="when">2021 – present</div><div><h3>Research Assistant</h3><p class="org">Dept. of Geography & Anthropology, Louisiana State University</p><p>Satellite and UAV research on wetland vegetation, land loss, pasture monitoring, and 3D mapping.</p></div></li>
-        <li><div class="when">Jun – Jul 2026</div><div><h3>GIS & Coastal Resilience Intern</h3><p class="org">LSU Coastal Ecosystem Design Studio</p><p>Compound flooding assessment and nature-based solutions for the proposed Slidell levee system.</p></div></li>
-        <li><div class="when">2018 – 2021</div><div><h3>Teaching Assistant</h3><p class="org">Dept. of Geomatics Engineering, Kathmandu University</p><p>Taught topographic surveying and geodesy, supervised student projects, and trained 60 students at survey camps.</p></div></li>
-        <li><div class="when">Jun – Aug 2018</div><div><h3>GIS Analyst Intern</h3><p class="org">Energy Development Council Nepal</p><p>Estimated hydropower potential with terrain and runoff modeling using Arc Hydro.</p></div></li>
-      </ul>
-
-      <div class="two-col lower">
-        <div>
-          <h3 class="sub">Leadership</h3>
-          <ul class="plain">
-            <li>Founding President, ASPRS LSU Student Chapter (2025–present)</li>
-            <li>Lab Manager, TiGERS Lab, LSU (2023–present)</li>
-            <li>Secretary & PR Chair, Nepalese Student Association at LSU</li>
-            <li>Local Organizing Committee, FOSS4G Asia 2021</li>
-          </ul>
+    <!-- ============ RESEARCH THEMES ============ -->
+    <section id="research" class="section tinted">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Research themes</p>
+          <h2>Four lenses on a changing coast</h2>
+          <p class="sub">My research spans scales, from centimeter-level drone imagery to forty years of satellite records.</p>
         </div>
-        <div>
-          <h3 class="sub">Honors & Awards</h3>
-          <ul class="plain">
-            <li>Phi Kappa Phi Honor Society (2026)</li>
-            <li>3rd Place, ASPRS Gulf South Geospatial Conference (2026)</li>
-            <li>1st Place, William G. Haag Graduate Presentation Award (2025)</li>
-            <li>Exemplary Lab Member Award, TiGERS Lab (2024)</li>
-            <li>Funded participant, Spectral Ecology Summer School, MSU (2024)</li>
-            <li>Best Paper Award, UASG, IIT Roorkee (2019)</li>
-          </ul>
+        <div class="theme-grid">
+          <article class="theme reveal">
+            <div class="theme-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M10 40 C 12 26, 14 18, 13 8 M18 40 C 19 28, 22 20, 26 10 M26 40 C 26 30, 28 24, 34 16 M34 40 C 35 32, 38 28, 42 24" /></svg>
+            </div>
+            <h3>Wetland vegetation & <i>Phragmites</i></h3>
+            <p>Mapping Roseau cane habitat, dieback, and recovery with deep learning on Landsat and Sentinel-2 time series.</p>
+            <div class="chips"><span>U-Net</span><span>Random Forest</span><span>CCDC</span><span>GEE</span></div>
+          </article>
+          <article class="theme reveal">
+            <div class="theme-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M4 36 L12 30 L18 33 L26 22 L32 26 L44 12" /><path d="M32 26 L44 18" stroke-dasharray="3 3"/></svg>
+            </div>
+            <h3>Land-loss time series & forecasting</h3>
+            <p>Filling gaps in and forecasting four decades of land-area change, and explaining its hydro-environmental drivers.</p>
+            <div class="chips"><span>GAM</span><span>Kalman / GPR</span><span>SARIMA</span><span>XGBoost</span></div>
+          </article>
+          <article class="theme reveal">
+            <div class="theme-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="18" y="18" width="12" height="8" rx="2"/><path d="M18 22 H8 M30 22 H40 M6 18 h6 M36 18 h6 M24 26 L16 42 M24 26 L32 42" /></svg>
+            </div>
+            <h3>UAV & field sensing</h3>
+            <p>Collecting multispectral, RGB, and LiDAR drone data, validated with RTK GNSS and field plots, for fine-scale ecology.</p>
+            <div class="chips"><span>10-band MS</span><span>LiDAR</span><span>Metashape</span><span>RTK</span></div>
+          </article>
+          <article class="theme reveal">
+            <div class="theme-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M4 30 C 10 26, 14 34, 20 30 S 30 26, 36 30 S 44 32, 44 30" /><path d="M4 38 C 10 34, 14 42, 20 38 S 30 34, 36 38 S 44 40, 44 38" /><path d="M24 6 L24 22 M18 12 L24 6 L30 12" /></svg>
+            </div>
+            <h3>Coastal resilience & flooding</h3>
+            <p>Assessing compound flooding with GIS and hydrologic analysis, and evaluating nature-based solutions with communities.</p>
+            <div class="chips"><span>Arc Hydro</span><span>ADCIRC</span><span>StoryMaps</span></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section wrap contact">
-      <h2>Contact</h2>
-      <p>I'm open to collaborations, research positions, and conversations about remote sensing and coastal science.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:bawast2@lsu.edu">bawast2@lsu.edu</a>
-        <!-- <a class="btn" href="LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a> -->
-        <a class="btn" href="https://scholar.google.com/citations?user=yn0OhgIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        <a class="btn" href="https://github.com/BAwasthi" target="_blank" rel="noopener">GitHub</a>
+    <!-- ============ STUDY SITES MAP ============ -->
+    <section id="sites" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Study sites</p>
+          <h2>Fieldwork across coastal Louisiana</h2>
+          <p class="sub">Click a site to fly to it on the map. Locations are approximate.</p>
+        </div>
+        <div class="map-wrap reveal">
+          <div id="siteMap" class="site-map" role="region" aria-label="Interactive map of study sites"></div>
+          <ol class="site-list" id="siteList"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section tinted">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Featured projects</p>
+          <h2>Research project portfolio</h2>
+          <p class="sub">Filter projects by method. Click an image to enlarge it.</p>
+        </div>
+        <div class="filter-row reveal" role="group" aria-label="Filter projects">
+          <button class="filter active" data-pfilter="all">All</button>
+          <button class="filter" data-pfilter="satellite">Satellite</button>
+          <button class="filter" data-pfilter="uav">UAV</button>
+          <button class="filter" data-pfilter="modeling">Modeling</button>
+          <button class="filter" data-pfilter="gis">GIS & Planning</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project reveal" data-cat="satellite modeling">
+            <div class="project-media" data-slider>
+              <img class="project-slide active" src="assets/projects/phragmites.svg" alt="Placeholder art for Roseau cane habitat mapping">
+              <div class="slider-dots"></div>
+            </div>
+            <div class="project-body">
+              <p class="kicker">Satellite · Deep learning · USDA/APHIS</p>
+              <h3>Large-scale Roseau cane habitat mapping</h3>
+              <p>Automated Landsat and Sentinel-2 workflows (Python, Google Earth Engine, ArcGIS Pro) using Random Forest, SVM, and U-Net, reaching up to 95% accuracy. CCDC and multi-year maps track dieback, persistence, and first and last occurrence.</p>
+              <div class="project-links"><a href="#publications" data-search="Phragmites">Related papers</a></div>
+            </div>
+          </article>
+
+          <article class="project reveal" data-cat="satellite modeling">
+            <div class="project-media" data-slider>
+              <img class="project-slide active" src="assets/projects/landloss.svg" alt="Placeholder art for four decades of land-area change">
+              <div class="slider-dots"></div>
+            </div>
+            <div class="project-body">
+              <p class="kicker">Time series · Forecasting · M.S. thesis</p>
+              <h3>Four decades of coastal land change</h3>
+              <p>A semi-automated Landsat framework for annual and monthly land area in four coastal systems (1984–2024). GAMs with lagged storm effects, Kalman versus Gaussian Process gap filling, and SARIMA, Prophet, XGBoost, and neural-net forecasts.</p>
+              <div class="project-links"><a href="#publications" data-search="land-area">Related papers</a><span class="badge-award">ASPRS 3rd Place</span></div>
+            </div>
+          </article>
+
+          <article class="project reveal" data-cat="uav">
+            <div class="project-media" data-slider>
+              <img class="project-slide active" src="assets/projects/uav-wetland.svg" alt="Placeholder art for multi-temporal UAV wetland mapping">
+              <div class="slider-dots"></div>
+            </div>
+            <div class="project-body">
+              <p class="kicker">UAV · Multispectral · Field validation</p>
+              <h3>Multi-temporal UAV mapping of Roseau cane</h3>
+              <p>RGB and 10-band multispectral drone surveys at Rockefeller, the Mississippi River Delta, Atchafalaya, and Vermilion. Vegetation indices, fine-scale classification, fragmentation, and land–water change, validated with RTK GPS and vegetation plots.</p>
+              <div class="project-links"><a href="#publications" data-search="drone">Related papers</a></div>
+            </div>
+          </article>
+
+          <article class="project reveal" data-cat="uav modeling">
+            <div class="project-media" data-slider>
+              <img class="project-slide active" src="assets/projects/pasture.svg" alt="Placeholder art for UAV pasture monitoring">
+              <div class="slider-dots"></div>
+            </div>
+            <div class="project-body">
+              <p class="kicker">UAV · Machine learning · Agriculture</p>
+              <h3>Pasture yield & quality monitoring</h3>
+              <p>Led drone surveys across six farms. Combined multispectral imagery with biomass samples and RTK data to model biomass, forage condition, species composition, and protein content.</p>
+            </div>
+          </article>
+
+          <article class="project reveal" data-cat="uav">
+            <div class="project-media" data-slider>
+              <img class="project-slide active" src="assets/projects/digital-twin.svg" alt="Placeholder art for the building digital twin">
+              <div class="slider-dots"></div>
+            </div>
+            <div class="project-body">
+              <p class="kicker">Photogrammetry · Point clouds · 3D</p>
+              <h3>Engineering building digital twin</h3>
+              <p>Nadir and oblique multispectral UAV imagery processed in Agisoft Metashape into georeferenced dense point clouds for an LSU Civil Engineering digital twin.</p>
+            </div>
+          </article>
+
+          <article class="project reveal" data-cat="gis">
+            <div class="project-media" data-slider>
+              <img class="project-slide active" src="assets/projects/flooding.svg" alt="Placeholder art for the Slidell compound flooding study">
+              <div class="slider-dots"></div>
+            </div>
+            <div class="project-body">
+              <p class="kicker">GIS · Hydrology · Nature-based solutions</p>
+              <h3>Slidell compound flooding & resilience</h3>
+              <p>Hydrologic, terrain, land-cover, and site-selection analysis for the proposed Slidell levee system, evaluating detention ponds, marsh terraces, sills, and breakwaters with the Bayou Liberty Association.</p>
+              <div class="project-links"><span class="badge-plain">LSU Coastal Ecosystem Design Studio</span></div>
+            </div>
+          </article>
+
+          <article class="project reveal" data-cat="uav">
+            <div class="project-media" data-slider>
+              <img class="project-slide active" src="assets/projects/ecotone.svg" alt="Placeholder art for pine–marsh ecotone mapping">
+              <div class="slider-dots"></div>
+            </div>
+            <div class="project-body">
+              <p class="kicker">UAV LiDAR · Terrestrial LiDAR · Ecology</p>
+              <h3>Pine–marsh ecotone mapping</h3>
+              <p>Designed and tested UAV flight plans for multispectral and LiDAR collection in the Lake Pontchartrain Basin, and ran terrestrial LiDAR field surveys for habitat classification.</p>
+            </div>
+          </article>
+
+          <article class="project reveal" data-cat="gis modeling">
+            <div class="project-media" data-slider>
+              <img class="project-slide active" src="assets/projects/hydropower.svg" alt="Placeholder art for the Nepal hydropower assessment">
+              <div class="slider-dots"></div>
+            </div>
+            <div class="project-body">
+              <p class="kicker">Hydrology · Arc Hydro · Nepal</p>
+              <h3>Theoretical hydropower potential of Nepal</h3>
+              <p>Delineated drainage networks and catchments, modeled streamflow, and combined WorldClim precipitation with terrain to estimate hydropower potential (Energy Development Council Nepal).</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section id="publications" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Publications & talks</p>
+          <h2>Searchable publication list</h2>
+          <p class="sub">Search by title, year, or topic, or filter by status. Use the copy button to grab a citation.</p>
+        </div>
+        <div class="pub-controls reveal">
+          <input id="pubSearch" type="search" placeholder="Search: Phragmites, UAV, 2026, forecasting…" aria-label="Search publications">
+          <div class="filter-row" role="group" aria-label="Filter publications">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="published">Published</button>
+            <button class="filter" data-filter="review">Accepted / Under review</button>
+            <button class="filter" data-filter="prep">In preparation</button>
+            <button class="filter" data-filter="talk">Talks & posters</button>
+          </div>
+        </div>
+        <p class="pub-count mono" id="pubCount" aria-live="polite"></p>
+        <div class="pub-list" id="pubList"></div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section tinted">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Experience</p>
+          <h2>From survey camps to coastal marshes</h2>
+        </div>
+        <ol class="timeline">
+          <li class="reveal"><span class="t-when">Aug 2021 – Present</span><div><h3>Research Assistant</h3><p class="t-org">Dept. of Geography & Anthropology, Louisiana State University</p><p>Leads satellite and UAV research on Roseau cane habitat, coastal land loss, pasture monitoring, digital twins, and pine–marsh ecotones.</p></div></li>
+          <li class="reveal"><span class="t-when">Jun – Jul 2026</span><div><h3>GIS & Coastal Resilience Intern</h3><p class="t-org">LSU Coastal Ecosystem Design Studio</p><p>Assessed compound flooding and nature-based solutions for the proposed Slidell levee system. Built maps and StoryMaps and worked with ADCIRC/SMS.</p></div></li>
+          <li class="reveal"><span class="t-when">Dec 2018 – Jul 2021</span><div><h3>Teaching Assistant</h3><p class="t-org">Dept. of Geomatics Engineering, Kathmandu University</p><p>Taught topographic surveying and physical and satellite geodesy, supervised AI tree-detection projects, and trained 60 students at survey camps.</p></div></li>
+          <li class="reveal"><span class="t-when">Jun – Aug 2018</span><div><h3>GIS Analyst Intern</h3><p class="t-org">Energy Development Council Nepal</p><p>Hydropower potential estimation with Arc Hydro, streamflow modeling, and WorldClim precipitation.</p></div></li>
+        </ol>
+
+        <div class="three-col">
+          <div class="reveal">
+            <h3 class="col-title">Leadership</h3>
+            <ul class="ticks">
+              <li>Founding President, ASPRS LSU Student Chapter <span>2025–</span></li>
+              <li>Lab Manager, TiGERS Lab, LSU <span>2023–</span></li>
+              <li>Secretary & PR Chair, Nepalese Student Association <span>2021–23</span></li>
+              <li>Local Organizing Committee, FOSS4G Asia <span>2021</span></li>
+              <li>Treasurer, Geomatics Engineering Society, KU <span>2016–17</span></li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <h3 class="col-title">Honors & awards</h3>
+            <ul class="ticks award">
+              <li>Phi Kappa Phi Honor Society <span>2026</span></li>
+              <li>3rd Place, ASPRS Gulf South Geospatial Conference <span>2026</span></li>
+              <li>1st Place, William G. Haag Graduate Presentation Award <span>2025</span></li>
+              <li>Exemplary Lab Member Award, TiGERS Lab <span>2024</span></li>
+              <li>Funded participant, Spectral Ecology Summer School, MSU <span>2024</span></li>
+              <li>Best Paper Award, UASG, IIT Roorkee <span>2019</span></li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <h3 class="col-title">Training</h3>
+            <ul class="ticks">
+              <li>GIS workshop: Building resilience through GIS, LSU <span>2025</span></li>
+              <li>Esri MOOC in Cartography <span>2020</span></li>
+              <li>SAR & Google Earth Engine ToT, ICIMOD <span>2019</span></li>
+              <li>Astronomical observation, LMTC Nepal <span>2020</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Toolkit</p>
+          <h2>Skills</h2>
+        </div>
+        <div class="skill-grid">
+          <div class="skill reveal"><h3>GIS & Remote Sensing</h3><div class="chips"><span>ArcGIS Pro</span><span>ArcGIS Online</span><span>StoryMaps</span><span>ModelBuilder</span><span>Google Earth Engine</span><span>QGIS</span><span>ENVI</span><span>eCognition</span><span>ERDAS IMAGINE</span></div></div>
+          <div class="skill reveal"><h3>Programming & Data</h3><div class="chips"><span>Python</span><span>ArcPy</span><span>GeoPandas</span><span>NumPy / Pandas</span><span>scikit-learn</span><span>R</span><span>SQL</span><span>JavaScript</span><span>Jupyter / Colab</span></div></div>
+          <div class="skill reveal"><h3>ML & Statistics</h3><div class="chips"><span>Random Forest</span><span>SVM</span><span>XGBoost</span><span>U-Net</span><span>TensorFlow / Keras</span><span>GAMs</span><span>Time-series forecasting</span><span>Model validation</span></div></div>
+          <div class="skill reveal"><h3>UAV & 3D Mapping</h3><div class="chips"><span>UAV operations</span><span>Multispectral</span><span>LiDAR</span><span>Agisoft Metashape</span><span>Pix4D</span><span>CloudCompare</span><span>Point clouds</span></div></div>
+          <div class="skill reveal"><h3>Hydrology & Coastal</h3><div class="chips"><span>Arc Hydro</span><span>Watershed analysis</span><span>ADCIRC</span><span>SMS</span></div></div>
+          <div class="skill reveal"><h3>Field & Surveying</h3><div class="chips"><span>RTK GNSS</span><span>Trimble Business Center</span><span>Total station</span><span>Ground truthing</span></div></div>
+        </div>
+        <p class="langs reveal"><b>Languages:</b> Nepali (native) · English (fluent) · Hindi (intermediate)</p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section contact">
+      <svg class="wave top" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 0, 480 80, 720 50 S 1200 0, 1440 50 V0 H0 Z"/></svg>
+      <div class="container contact-inner reveal">
+        <p class="eyebrow light">Contact</p>
+        <h2>Let's work on coastal questions together.</h2>
+        <p>I'm open to research collaborations, postdoctoral and industry roles, and conversations about remote sensing, GeoAI, and coastal resilience.</p>
+        <div class="hero-actions center">
+          <a class="btn btn-primary" href="mailto:bawast2@lsu.edu">bawast2@lsu.edu</a>
+          <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=yn0OhgIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn btn-ghost" href="https://github.com/BAwasthi" target="_blank" rel="noopener">GitHub</a>
+          <!-- <a class="btn btn-ghost" href="LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a> -->
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="wrap footer">
-    <p>© 2026 Basant Awasthi · Baton Rouge, Louisiana</p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Basant Awasthi · Baton Rouge, Louisiana</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
   </footer>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
