@@ -8,7 +8,7 @@
 
 const PUBLICATIONS = [
   // ---------- Accepted / under review ----------
-  { type: "review", status: "Accepted", year: 2026,
+  { type: "review", status: "Published", year: 2026,
     title: "Integrating machine learning and remote sensing for comprehensive drought modeling in Louisiana, USA",
     authors: "Sresto, M. A., Meng, X., Awasthi, B., Siddika, S., Saha, S., Roy, S., Islam, A. H. M., Hossain, T., Ishmam, Z. S., Setu, S. R., & Hashar, M. N.",
     venue: "Science of the Total Environment", link: "", keywords: "drought machine learning" },
@@ -53,8 +53,8 @@ const PUBLICATIONS = [
     title: "A unified framework for imputing and forecasting coastal land-area time series from Landsat",
     authors: "Awasthi, B., KC, M., & Meng, X.", venue: "Expected submission: October 2026", link: "",
     keywords: "land-area forecasting time series Kalman Gaussian process Landsat coastal" },
-  { type: "prep", status: "In preparation", year: 2026,
-    title: "Beyond linear trends: four decades of nonlinear land-area dynamics and hydro-environmental controls across coastal Louisiana (1984–2024)",
+  { type: "prep", status: "Under Review", year: 2026,
+    title: "Beyond Linear Trends: Four Decades of Land-Area Dynamics and Environmental Variability Across Coastal Louisiana (1984-2024)",
     authors: "Awasthi, B., KC, M., & Meng, X.", venue: "Expected submission: September 2026", link: "",
     keywords: "land-area GAM land loss Landsat coastal Louisiana" },
   { type: "prep", status: "In preparation", year: 2026,
