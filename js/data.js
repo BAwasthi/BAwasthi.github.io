@@ -8,10 +8,11 @@
 
 const PUBLICATIONS = [
   // ---------- Accepted / under review ----------
-  { type: "review", status: "Published", year: 2026,
+  { type: "published", status: "Published", year: 2026,
     title: "Integrating machine learning and remote sensing for comprehensive drought modeling in Louisiana, USA",
     authors: "Sresto, M. A., Meng, X., Awasthi, B., Siddika, S., Saha, S., Roy, S., Islam, A. H. M., Hossain, T., Ishmam, Z. S., Setu, S. R., & Hashar, M. N.",
-    venue: "Science of the Total Environment", link: "", keywords: "drought machine learning" },
+    venue: "Science of the Total Environment, 1056, 182386", link: "https://doi.org/10.1016/j.scitotenv.2026.182386",
+    keywords: "drought machine learning Louisiana" },
   { type: "review", status: "Under review", year: 2026,
     title: "Temporal transferability of deep learning for Phragmites australis mapping through Sentinel-2 time series in the Lower Mississippi River Delta",
     authors: "KC, M., Awasthi, B., Sahoo, B., Sresto, M. A., Roy, S., & Meng, X.",
@@ -53,9 +54,9 @@ const PUBLICATIONS = [
     title: "A unified framework for imputing and forecasting coastal land-area time series from Landsat",
     authors: "Awasthi, B., KC, M., & Meng, X.", venue: "Expected submission: October 2026", link: "",
     keywords: "land-area forecasting time series Kalman Gaussian process Landsat coastal" },
-  { type: "prep", status: "Under Review", year: 2026,
+  { type: "review", status: "Under review", year: 2026,
     title: "Beyond Linear Trends: Four Decades of Land-Area Dynamics and Environmental Variability Across Coastal Louisiana (1984-2024)",
-    authors: "Awasthi, B., KC, M., & Meng, X.", venue: "Expected submission: September 2026", link: "",
+    authors: "Awasthi, B., KC, M., & Meng, X.", venue: "Manuscript under review", link: "",
     keywords: "land-area GAM land loss Landsat coastal Louisiana" },
   { type: "prep", status: "In preparation", year: 2026,
     title: "A drone sampling and monitoring solution for Phragmites australis wetland habitat dynamics",
