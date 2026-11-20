@@ -135,7 +135,13 @@
   const boldMe = s => esc(s).replace(/Awasthi, B\./g, '<b>Awasthi, B.</b>');
 
   if (pubList && typeof PUBLICATIONS !== 'undefined') {
-    PUBLICATIONS.forEach(p => {
+    // Display order: under review / accepted, published, in preparation, talks; newest first within each group.
+    // Entries in js/data.js can be in any order.
+    const ORDER = { review: 0, published: 1, prep: 2, talk: 3 };
+    const sorted = PUBLICATIONS.map((p, i) => ({ p, i })).sort((a, b) =>
+      (ORDER[a.p.type] ?? 9) - (ORDER[b.p.type] ?? 9) || b.p.year - a.p.year || a.i - b.i
+    ).map(x => x.p);
+    sorted.forEach(p => {
       const card = document.createElement('article');
       card.className = 'pub reveal visible';
       card.dataset.type = p.type;

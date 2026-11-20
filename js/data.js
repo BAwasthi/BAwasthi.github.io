@@ -4,6 +4,7 @@
    - type: "published" | "review" | "prep" | "talk"
    - status: the label shown on the card
    - link: a URL (DOI, journal page) or "" if there isn't one yet
+   - Order in this file does not matter: the site sorts by type, then newest year.
    ===================================================================== */
 
 const PUBLICATIONS = [
